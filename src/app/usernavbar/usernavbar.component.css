@@ -1,0 +1,209 @@
+/* User Dashboard Container */
+.user-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #00acc1 0%, #0097a7 100%);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 30px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.welcome-section i {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.welcome-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.nav-item {
+  margin: 0;
+  padding: 0 15px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.nav-link i {
+  font-size: 22px;
+  width: 24px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #00bcd4 0%, #00acc1 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+/* Cart Badge */
+.cart-badge {
+  background: #ff5252;
+  color: white;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+  margin-left: auto;
+  box-shadow: 0 2px 6px rgba(255, 82, 82, 0.4);
+}
+
+/* Logout Section */
+.logout-section {
+  padding: 20px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.logout-link {
+  background: rgba(220, 20, 60, 0.1);
+  border-left: 4px solid #ff5252;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logout-link:hover {
+  background: rgba(220, 20, 60, 0.2);
+  border-left-color: #f44336;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 280px;
+  flex: 1;
+  padding: 30px;
+  min-height: 100vh;
+  width: calc(100% - 280px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 240px;
+  }
+  
+  .main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+  
+  .welcome-text {
+    font-size: 16px;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    padding: 15px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .welcome-section i {
+    font-size: 32px;
+  }
+  
+  .welcome-text {
+    font-size: 14px;
+  }
+  
+  .nav-link {
+    padding: 14px 15px;
+    font-size: 14px;
+  }
+  
+  .nav-link i {
+    font-size: 18px;
+  }
+}
+
+/* Scrollbar Styling for Sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

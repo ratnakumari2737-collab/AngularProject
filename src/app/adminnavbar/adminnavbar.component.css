@@ -1,0 +1,143 @@
+/* Admin Dashboard Container */
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+  width: 100%;
+}
+
+/* Navbar Styling */
+.admin-navbar {
+  background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+  padding: 15px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e1e1e;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand i {
+  font-size: 28px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1e1e1e;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(30, 30, 30, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+  background: rgba(30, 30, 30, 0.25);
+  border-bottom: 3px solid #1e1e1e;
+}
+
+.nav-link i {
+  font-size: 18px;
+}
+
+.logout-btn {
+  background: rgba(184, 61, 61, 0.2);
+  border-left: 3px solid #b83d3d;
+}
+
+.logout-btn:hover {
+  background: rgba(184, 61, 61, 0.3);
+}
+
+.logout-item {
+  margin-left: auto;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  padding: 30px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .admin-navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .logout-item {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  
+  .navbar-brand {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .nav-item {
+    width: 100%;
+  }
+  
+  .nav-link {
+    justify-content: center;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .dashboard-content {
+    padding: 15px;
+  }
+}

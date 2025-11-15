@@ -1,0 +1,109 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h1><i class="fa fa-shopping-cart"></i> Shopping Cart</h1>
+    <p>Your selected jewellery items</p>
+  </div>
+
+  <!-- Cart Items -->
+  <div class="cart-content" *ngIf="cartitems && cartitems.length > 0">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let c of cartitems; let i = index">
+        <div class="item-image">
+          <img [src]="c.productImage" alt="{{ c.productName }}">
+        </div>
+        <div class="item-details">
+          <h3 class="item-name">{{ c.productName }}</h3>
+          <p class="item-description">{{ c.productDescription }}</p>
+          <div class="item-price">
+            <span class="price-label">Price:</span>
+            <span class="price-value">{{ c.productPrice | currency:'INR' }}</span>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn-remove" (click)="removeItem(i)">
+            <i class="fa fa-trash"></i> Remove
+          </button>
+          <button class="btn-buy" data-bs-toggle="modal" data-bs-target="#ordermodal" (click)="buynow(c)">
+            <i class="fa fa-shopping-bag"></i> Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!cartitems || cartitems.length === 0">
+    <i class="fa fa-shopping-cart"></i>
+    <h2>Your Cart is Empty</h2>
+    <!-- <p>Looks like you haven't added any items to your cart yet. Start shopping to fill it up!</p> -->
+    <button class="btn-shop" routerLink="/user/products">
+      <i class="fa fa-gem"></i> Browse Products
+    </button>
+  </div>
+</div>
+
+<!-- Order Modal -->
+<div class="modal fade" id="ordermodal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">
+          <i class="fa fa-shopping-bag"></i> Place Your Order
+        </h1>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="info-notice">
+          <i class="fa fa-info-circle"></i>
+          <p>Cash on Delivery (COD) option available for all orders</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="orderUsername" class="form-label">
+            <i class="fa fa-user"></i> Username
+          </label>
+          <input 
+            type="text" 
+            id="orderUsername" 
+            [(ngModel)]="username" 
+            class="form-control" 
+            disabled
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="orderAddress" class="form-label">
+            <i class="fa fa-map-marker-alt"></i> Delivery Address
+          </label>
+          <textarea 
+            id="orderAddress" 
+            [(ngModel)]="address" 
+            class="form-control" 
+            rows="3"
+            placeholder="Enter your complete delivery address"
+          ></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="orderPhone" class="form-label">
+            <i class="fa fa-phone"></i> Phone Number
+          </label>
+          <input 
+            type="text" 
+            id="orderPhone" 
+            [(ngModel)]="phone" 
+            class="form-control"
+            placeholder="Enter your contact number"
+          >
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" data-bs-dismiss="modal" (click)="placeorder()">
+          <i class="fa fa-check"></i> Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

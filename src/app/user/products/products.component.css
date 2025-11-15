@@ -1,0 +1,82 @@
+.category-filters {
+  padding: 20px 0;
+}
+
+.btn-filter {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 2px solid #D4AF37;
+  background-color: white;
+  color: #D4AF37;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-filter:hover {
+  background-color: #D4AF37;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+
+.btn-filter.active {
+  background-color: #D4AF37;
+  color: white;
+  box-shadow: 0 2px 4px rgba(212, 175, 55, 0.5);
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+

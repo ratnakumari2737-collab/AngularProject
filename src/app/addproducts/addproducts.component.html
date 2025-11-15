@@ -1,0 +1,103 @@
+<div class="add-product-container">
+  <div class="container-wrapper">
+    <div class="hero-section">
+      <img [src]="photo" alt="Gold Jewellery" class="hero-image">
+      <img [src]="photo1" alt="Gold Jewellery" class="hero-image">
+    </div>
+    
+    <div class="form-section">
+      <div class="form-header">
+        <h2><i class="fa fa-gem"></i> Add New Product</h2>
+        <p>Create a new jewellery product to add to your collection</p>
+      </div>
+      
+      <form (ngSubmit)="addnow()" class="product-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productId">
+              <i class="fa fa-hashtag"></i> Product ID
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productId"
+              formControlName="productId" 
+              placeholder="Enter product ID"
+            >
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productName">
+              <i class="fa fa-tag"></i> Product Name
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productName"
+              formControlName="productName" 
+              placeholder="Enter product name"
+            >
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productDescription">
+              <i class="fa fa-align-left"></i> Product Description
+            </label>
+            <textarea 
+              class="form-control description-input" 
+              id="productDescription"
+              formControlName="productDescription" 
+              placeholder="Enter product description"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productPrice">
+              <i class="fa fa-rupee-sign"></i> Product Price (₹)
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productPrice"
+              formControlName="productPrice" 
+              placeholder="Enter price"
+            >
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productImage">
+              <i class="fa fa-image"></i> Product Image URL
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="productImage"
+              formControlName="productImage" 
+              placeholder="Enter image URL"
+            >
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button 
+            class="btn-submit" 
+            type="submit" 
+            [disabled]="!productForm.valid"
+            [class.disabled]="!productForm.valid"
+          >
+            <i class="fa fa-plus-circle"></i> Add Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

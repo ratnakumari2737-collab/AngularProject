@@ -1,0 +1,54 @@
+<div class="user-dashboard">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="welcome-section">
+        <i class="fa fa-user-circle"></i>
+        <span class="welcome-text">Welcome {{username}}</span>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a routerLink="/user/products" routerLinkActive="active" class="nav-link">
+            <i class="fa fa-gem"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a routerLink="/user/cart" routerLinkActive="active" class="nav-link">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Cart</span>
+            <span class="cart-badge" *ngIf="cartlen > 0">{{cartlen}}</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a routerLink="/user/wishlist" routerLinkActive="active" class="nav-link">
+            <i class="fa fa-heart"></i>
+            <span>Wishlist</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a routerLink="/user/orders" routerLinkActive="active" class="nav-link">
+            <i class="fa fa-list-alt"></i>
+            <span>Orders</span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="logout-section">
+        <a (click)="logout()" class="nav-link logout-link">
+          <i class="fa fa-sign-out-alt"></i>
+          <span>LOGOUT</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

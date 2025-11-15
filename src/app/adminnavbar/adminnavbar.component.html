@@ -1,0 +1,43 @@
+<div class="admin-dashboard">
+  <nav class="admin-navbar">
+    <div class="navbar-brand">
+      <i class="fa fa-gem"></i>
+      <span> PLR JEWELLERY</span>
+    </div>
+    <ul class="navbar-menu">
+      <li class="nav-item">
+        <a routerLink="/admin/add" routerLinkActive="active" class="nav-link">
+          <i class="fa fa-plus-circle"></i>
+          <span>Add Product</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin/view" routerLinkActive="active" class="nav-link">
+          <i class="fa fa-eye"></i>
+          <span>View Products</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin/manage" routerLinkActive="active" class="nav-link">
+          <i class="fa fa-cog"></i>
+          <span>Manage Products</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin/all" routerLinkActive="active" class="nav-link">
+          <i class="fa fa-list"></i>
+          <span>All Jewellery</span>
+        </a>
+      </li>
+      <li class="nav-item logout-item">
+        <a (click)="logout()" class="nav-link logout-btn">
+          <i class="fa fa-sign-out-alt"></i>
+          <span>{{username}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

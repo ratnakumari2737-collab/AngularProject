@@ -1,0 +1,28 @@
+<!-- Category Filter Buttons -->
+<div class="category-filters mb-4 text-center">
+    <button *ngFor="let category of categories" 
+            class="btn btn-filter"
+            [class.active]="selectedCategory === category"
+            (click)="filterByCategory(category)">
+        {{category}}
+    </button>
+</div>
+
+<!-- Product Grid -->
+<div class="row">
+    <div class="col-md-3" *ngFor="let j of filteredJewellery">
+        <a (click)="opendetails(j.productId)">
+            <div class="card">
+                <div class="card-header">
+                    <img [src]="j.productImage" height="200" alt="" class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{j.productName}}</h3>
+                    <p>{{j.productDescription}}</p>
+                    <p>price: {{j.productPrice |currency:'INR'}}</p>
+                </div>
+            </div>
+        </a> 
+
+    </div>
+</div>

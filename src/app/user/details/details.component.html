@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-3">
+        <img [src]="jewellery.productImage" class="img-fluid" height="200" alt="">
+    </div>
+    <div class="col-md-9">
+        <h1>{{jewellery.productName}}</h1>
+        <div>
+            <p>{{jewellery.productDescription}}</p>
+        </div>
+        <div>
+            <p>Price : {{jewellery.productPrice | currency:'INR'}}</p>
+        </div>
+        <div>
+            <button class="btn btn-warning" (click)="addtowishlist()">
+                <i class="fa fa-heart text-white"></i>Wishlist</button>
+            <button class="btn btn-primary" (click)="addnow()">
+                <i class="fa fa-shopping-cart"></i>Add to Cart</button>
+        </div>
+    </div>
+</div>
